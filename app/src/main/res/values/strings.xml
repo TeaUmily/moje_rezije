@@ -1,0 +1,87 @@
+<resources>
+    <string name="app_name">Moje Režije</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="electricity">Struja</string>
+    <string name="gas">Plin</string>
+    <string name="water">Voda</string>
+    <string name="reserve">Pričuva</string>
+    <string name="garbage_collection">Odvoz smeća</string>
+    <string name="communal">Komunalno</string>
+    <string name="hrt_subscription">HRT pretplata</string>
+    <string name="telecommunications">Telekomunikacije</string>
+    
+    // Home screen
+    <string name="upcoming_bills">Nadolazeći računi</string>
+
+    // Bill form screen
+    <string name="new_bill">Novi račun</string>
+    <string name="edit_bill">Izmjeni račun</string>
+    <string name="save_changes">Spremi izmjene</string>
+    <string name="item">Stavka</string>
+    <string name="deadline_for_payment">Rok plaćanja</string>
+    <string name="amount">Iznos</string>
+    <string name="kn">Kn</string>
+    <string name="this_bill_is">Ovaj račun je</string>
+    <string name="paid">Plaćen</string>
+    <string name="not_paid">Nije plaćen</string>
+    <string name="note">Bilješka</string>
+    <string name="save">Spremi</string>
+    <string name="empty_field">Polje ne može ostati prazno</string>
+    <string name="do_you_want_to_delete_bill">Želite li obrisati ovaj račun?</string>
+    <string name="yes">Da</string>
+    <string name="no">Ne</string>
+
+    // Details screen
+    <string name="min">Min</string>
+    <string name="max">Max</string>
+    <string name="average">Prosjek</string>
+    <string name="paid_bills">Plaćeni računi</string>
+    <string name="not_paid_bills">Neplaćeni računi</string>
+    <string name="show_all">Prikaži sve</string>
+    <string name="still_no_input">Još nema unosa</string>
+    <string name="more_then_one_bill_required">Potrebno je imati više od jednog unešenog računa za prikaz grafa</string>
+    
+    // Notification settings
+    <string name="reminder">Podsjetnik</string>
+    <string name="send_reminder">Pošalji podsjetnik</string>
+    <string name="time_to_send_reminder">Vrijeme slanja podsjetnika</string>
+    <string name="one_day_earlier">Dan ranije</string>
+    <string name="two_days_earlier">Dva dana ranije</string>
+    <string name="five_days_earlier">Pet dana ranije</string>
+    <string name="week_earlier">Tjedan dana ranije</string>
+
+    <string-array name="months">
+        <item>Siječanj</item>
+        <item>Veljača</item>
+        <item>Ožujak</item>
+        <item>Travanj</item>
+        <item>Svibanj</item>
+        <item>Lipanj</item>
+        <item>Srpanj</item>
+        <item>Kolovoz</item>
+        <item>Rujan</item>
+        <item>Listopad</item>
+        <item>Studeni</item>
+        <item>Prosinac</item>
+    </string-array>
+
+    <string-array name="months_abbreviations">
+        <item>Sij</item>
+        <item>Velj</item>
+        <item>Ožuj</item>
+        <item>Trav</item>
+        <item>Svib</item>
+        <item>Lip</item>
+        <item>Srp</item>
+        <item>Kol</item>
+        <item>Ruj</item>
+        <item>List</item>
+        <item>Stud</item>
+        <item>Pros</item>
+    </string-array>
+
+    <string name="upcoming_bill">Nadolazeći račun </string>
+    <string name="set_camera_above_bill_barcode">Postavite kameru iznad bar koda računa</string>
+    <string name="to_use_barcode_scanner_enable_camera_permission">Za skeniranje bar koda računa potrebno je dozvoliti korištenje kamere</string>
+    <string name="bottom_sheet_tittle">Iznos računa prema mjesecima u godini</string>
+</resources>
