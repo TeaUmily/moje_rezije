@@ -97,6 +97,7 @@ class BillFormViewModel @Inject constructor(
     }
 
     fun onAmountChanged(amount: String) {
+        Log.e("BillFormVM", "amount: $amount")
         billFormState = billFormState.copy(amount = amount, showAmountError = amount.isEmpty())
     }
 
@@ -157,7 +158,7 @@ class BillFormViewModel @Inject constructor(
     private fun createBillFromState(billId: String) =
         Bill(id = billId,
             note = billFormState.note,
-            amount = String.format("%.2f", billFormState.amount.toFloat()).toFloat(),
+            amount = String.format("%.2f", billFormState.amount.toFloat()).replace(",", ".").toFloat(),
             dueDate = provideDueDateInUiFormat(),
             utilityTitle = billFormState.selectedUtility,
             isPaid = billFormState.isPaid
