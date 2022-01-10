@@ -1,6 +1,5 @@
 package hr.tumiljanovic.mojerezije.ui.billForm
 
-import android.util.Log
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.mutableStateOf
@@ -97,7 +96,6 @@ class BillFormViewModel @Inject constructor(
     }
 
     fun onAmountChanged(amount: String) {
-        Log.e("BillFormVM", "amount: $amount")
         billFormState = billFormState.copy(amount = amount, showAmountError = amount.isEmpty())
     }
 
