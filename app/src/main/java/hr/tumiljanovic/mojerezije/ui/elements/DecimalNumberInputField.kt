@@ -54,7 +54,7 @@ fun DecimalNumberInputField(
             backgroundColor = MaterialTheme.colors.background,
             unfocusedIndicatorColor = BoboGray
         ),
-        placeholder = { Text("0,0") }
+        placeholder = { Text("0.0") }
     )
 
 }

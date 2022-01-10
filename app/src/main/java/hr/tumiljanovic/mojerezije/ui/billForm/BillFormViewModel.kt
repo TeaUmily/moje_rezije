@@ -1,6 +1,5 @@
 package hr.tumiljanovic.mojerezije.ui.billForm
 
-import android.util.Log
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.mutableStateOf
@@ -157,7 +156,7 @@ class BillFormViewModel @Inject constructor(
     private fun createBillFromState(billId: String) =
         Bill(id = billId,
             note = billFormState.note,
-            amount = String.format("%.2f", billFormState.amount.toFloat()).toFloat(),
+            amount = String.format("%.2f", billFormState.amount.toFloat()).replace(",", ".").toFloat(),
             dueDate = provideDueDateInUiFormat(),
             utilityTitle = billFormState.selectedUtility,
             isPaid = billFormState.isPaid
