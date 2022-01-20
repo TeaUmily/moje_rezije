@@ -1,7 +1,7 @@
 package hr.tumiljanovic.mojerezije.ui.state
 
 import androidx.compose.ui.graphics.Color
-import com.madrapps.plot.line.DataPoint
+import com.github.mikephil.charting.data.Entry
 import hr.tumiljanovic.mojerezije.common.model.Utility
 import hr.tumiljanovic.mojerezije.domain.bill.model.Bill
 
@@ -25,7 +25,6 @@ data class ExtremeData(
 data class YearChartData(
     val value: Int,
     var color: Color = Color.Black,
-    val dataPoints: List<DataPoint> = listOf(),
-    var isSelected: Boolean = false,
-    val isCurrentYear: Boolean = false
+    val entries: List<Entry> = listOf(),
+    var isSelected: Boolean = true
 )

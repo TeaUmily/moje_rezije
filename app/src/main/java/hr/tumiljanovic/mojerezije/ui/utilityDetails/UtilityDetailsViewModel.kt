@@ -6,7 +6,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.madrapps.plot.line.DataPoint
+import com.github.mikephil.charting.data.Entry
 import dagger.hilt.android.lifecycle.HiltViewModel
 import hr.tumiljanovic.mojerezije.R
 import hr.tumiljanovic.mojerezije.common.constants.EMPTY_STRING
@@ -80,19 +80,16 @@ class UtilityDetailsViewModel @Inject constructor(
         val billsGroupedByYears = billList.sortedBy { it.dueDate }.groupBy { DateUtils.getYearFromDate(it.dueDate) }.values
         val yearsData = billsGroupedByYears.map { bills ->
             val year = DateUtils.getYearFromDate(bills[0].dueDate)
-            val isCurrentYear = year == DateUtils.getYearFromDate(Date())
             YearChartData(
                 value = year,
                 color = ChartYear.values().find {  it.value == year }?.color ?: Color.Black,
-                dataPoints = provideLineDataPoints(bills),
-                isSelected = isCurrentYear,
-                isCurrentYear = isCurrentYear
+                entries = provideLineDataPoints(bills)
             )
         }
         return  yearsData
     }
 
-    private fun provideLineDataPoints(bills: List<Bill>) = bills.map { DataPoint(DateUtils.getMonthFromDate(it.dueDate).toFloat(), it.amount) }
+    private fun provideLineDataPoints(bills: List<Bill>) = bills.map { Entry(DateUtils.getMonthFromDate(it.dueDate).toFloat(), it.amount) }
 
     private fun provideAverageBillAmount(bills: List<Bill>)  = if(bills.isNotEmpty()) bills.map { it.amount }.average() else 0.0
 
@@ -128,7 +125,7 @@ class UtilityDetailsViewModel @Inject constructor(
 
     fun onYearCheckboxSelected(year: Int, isChecked: Boolean) {
         val oldBottomSheetState = bottomSheetState
-        val newBottomSheetState = oldBottomSheetState.map { YearChartData(it.value, it.color, it.dataPoints, if(it.value == year) isChecked else it.isSelected, it.isCurrentYear) }
+        val newBottomSheetState = oldBottomSheetState.map { YearChartData(it.value, it.color, it.entries, if(it.value == year) isChecked else it.isSelected) }
 
         bottomSheetState = newBottomSheetState
       }
